@@ -128,7 +128,6 @@ if canvas_result.image_data is not None:
     # Invert colors (MNIST digits are white on black background)
     # Get pixel data and convert to numpy array
     img_array = np.array(img_resized)
-    img_array = 255 - img_array # Invert colors: white becomes black (0), black becomes white (255)
 
     # Flatten the image array (28x28 to 784)
     img_flattened = img_array.flatten()
