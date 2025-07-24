@@ -150,7 +150,9 @@ if canvas_result.image_data is not None:
                 st.success(f"Predicted Digit: **{prediction[0]}**")
 
                 # Display the processed image for debugging/visualization
-                st.image(img_resized, caption="Processed Input (28x28)", width=100)
+                st.image(img_resized, caption="Processed Input (28x28, Inverted)", width=100)
+                st.write("Raw input data (first 20 pixels):", input_data[0, :20])
+                st.write("Sum of all pixel values:", np.sum(input_data)) # Should be >0 if drawn
             except Exception as e:
                 st.error(f"An error occurred during prediction: {e}")
                 st.warning("Please try drawing again or check the model file.")
